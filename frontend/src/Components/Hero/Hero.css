@@ -1,8 +1,9 @@
 .hero{
-    height: 100vh;
+    min-height: 60vh;
+    height: auto;
     background:linear-gradient(180deg, #fde1ff,#e1ffea22 60%);
     display: flex;
-
+    overflow-x: hidden;
 }
 .hero-left{
     flex: 1;
@@ -10,7 +11,8 @@
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    padding-left: 180px;
+    padding-left: clamp(20px, 10vw, 180px);
+    padding-right: 20px;
     line-height: 1.1;
 }
 
@@ -21,8 +23,8 @@
 }
 
 .hero-left p{
-    color:#171717;
-    font-size: 100px;
+    color: #171717;
+    font-size: clamp(36px, 12vw, 100px);
     font-weight: 700;
 }
 
@@ -40,13 +42,13 @@
     justify-content: center;
     align-items: center;
     gap: 15px;
-    width: 310px;
-    height: 70px;
+    width: clamp(200px, 40vw, 310px);
+    height: clamp(50px, 8vw, 70px);
     border-radius: 75px;
     margin-top: 30px;
     background: #ff4141;
     color: white;
-    font-size: 22px;
+    font-size: clamp(16px, 3vw, 22px);
     font-weight: 500;
 }
 .hero-right{
@@ -54,4 +56,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+    .hero-left {
+        padding-left: clamp(15px, 5vw, 50px);
+        padding-right: clamp(15px, 5vw, 50px);
+        gap: 15px;
+    }
+    .hero-left h2 {
+        font-size: clamp(18px, 4vw, 26px);
+    }
+    .hero-left p {
+        font-size: clamp(28px, 8vw, 60px);
+    }
+    .hero-hand-icon img {
+        width: clamp(60px, 15vw, 105px);
+    }
+    .hero-latest-btn {
+        margin-top: 20px;
+    }
+    .hero-right {
+        margin-top: 30px;
+    }
 }

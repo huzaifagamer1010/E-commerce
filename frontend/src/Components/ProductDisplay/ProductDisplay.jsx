@@ -21,7 +21,7 @@ const ProductDisplay = (props) => {
             <div className="productdisplay-right">
 
                 <h1>{product.name}</h1>
-                <div className="productdsiplay-right-stars">
+                <div className="productdisplay-right-stars">
                     <img src={star_icon} alt="" />
                     <img src={star_icon} alt="" />
                     <img src={star_icon} alt="" />

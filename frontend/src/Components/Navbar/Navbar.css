@@ -18,9 +18,9 @@
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 50px;
+    gap: clamp(20px, 5vw, 50px);
     color: #626262;
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     font-weight: 500;
 }
 .nav-menu li{
@@ -41,18 +41,18 @@
 .nav-login-cart{
     display: flex;
     align-items: center;
-    gap:45px
+    gap: clamp(20px, 4vw, 45px);
 }
 .nav-login-cart button{
-    width: 157px;
-    height: 58px;
+    width: clamp(120px, 20vw, 157px);
+    height: clamp(45px, 6vw, 58px);
     outline: none;
     border: 1px solid #7a7a7a;
     border-radius: 75px;
     color: #515151;
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     font-weight: 500;
-    background:white;
+    background: white;
     cursor: pointer;
 }
 .nav-login-cart button:active{
@@ -70,4 +70,17 @@
     font-size: 14px;
     background: red;
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        justify-content: space-between;
+        padding: 12px 15px;
+    }
+    .nav-logo p {
+        font-size: clamp(24px, 5vw, 38px);
+    }
+    .nav-menu {
+        gap: clamp(15px, 3vw, 30px);
+    }
 }

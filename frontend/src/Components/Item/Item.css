@@ -1,6 +1,6 @@
 .item{
-    width: 350px;
-
+    width: clamp(200px, 90vw, 350px);
+    max-width: 350px;
 }
 .item p{
     margin: 6px 0px;
@@ -19,9 +19,18 @@
     font-size: 18px;
     font-weight: 500;
     text-decoration: line-through;
-
 }
 .item:hover{
-transform: scale(1.05);
-transition: 0.6s;
+    transform: scale(1.05);
+    transition: 0.6s;
+}
+
+@media screen and (max-width: 768px) {
+    .item {
+        width: clamp(160px, 80vw, 300px);
+    }
+    .item-price-new,
+    .item-price-old {
+        font-size: 14px;
+    }
 }
